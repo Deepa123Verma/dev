@@ -1,0 +1,13 @@
+<table>
+    <tr>
+      <th>product_type</th>
+      <th>price</th>
+      <th>image</th>
+    </tr>
+  <% @products.each do |product|%>
+    <tr>
+      <td><%= product.product_type%></td>
+      <td><%= product.price%></td>
+    </tr>
+ <%end%>
+</table>
