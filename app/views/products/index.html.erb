@@ -1,13 +1,12 @@
-<table>
-    <tr>
-      <th>product_type</th>
-      <th>price</th>
-      <th>image</th>
-    </tr>
+<h5>All Products </h5>
+
+<p> you have visited this site <%= pluralize @visit_caunt, 'time'%>.</p>
   <% @products.each do |product|%>
-    <tr>
-      <td><%= product.product_type%></td>
-      <td><%= product.price%></td>
-    </tr>
- <%end%>
-</table>
+   
+      <%= product.product_type%>
+      <% if product.image.present? %>
+        <p><%= image_tag product.image%>
+      <% end %>
+      <%= product.price%><br><hr><br>
+   
+ <% end %>
