@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  
+<h1>Shops#index</h1>
+<p>Find me in app/views/shops/index.html.erb</p>
+<h5>All Products </h5>
+
+<p> you have visited this site <%= pluralize @visit_caunt, 'time'%>.</p>
+  <% @products.each do |product|%>
+   
+      <%= product.product_type%>
+      <% if product.image.present? %>
+        <p><%= image_tag product.image%>
+      <% end %>
+      <%= product.price%><br><hr><br>
+   
+ <% end %>
+ 
+ <button id="bt">Add to Card</button><br><br>
+ <button id="bt1">Add to Card</button><br><br>
+ <input id="nm" type="text">
+
+ <script>
+   var a=0;
+   $(document).ready(function(){
+     $('#bt').click(function(){
+       a++;
+       $('#nm').val(a);
+     });
+
+     $('#bt1').click(function(){
+       a--;
+       $('#nm').val(a);
+     });
+
+   });
+ </script>
+
+</body>
+</html>
+
