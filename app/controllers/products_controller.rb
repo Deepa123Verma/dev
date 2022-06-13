@@ -1,10 +1,13 @@
 class ProductsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
+  load_and_authorize_resource
 
   def index
     #product = Product.find(params[:id])
      @products = Product.all
+    #  authorize! :read, @products
+     
     # render json: product
   end
 
@@ -14,6 +17,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    authorize! :read, @product
   end
  
   #  def create

@@ -1,0 +1,12 @@
+<h1><%= @user.email %></h1>
+
+<p><%= @user.image %></p>
+<div style = "width:100px; height:auto">
+<%= image_tag(@user.image,style:'width:100%')%>
+</div>
+
+<ul>
+<% if can? :update, @user %>
+  <li><%= link_to "Edit", edit_user_path(@user) %></li>
+<% end %>
+</ul>

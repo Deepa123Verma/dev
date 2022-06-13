@@ -7,5 +7,8 @@
 </div>
 
 <ul>
+<% if can? :update, @product %>
   <li><%= link_to "Edit", edit_product_path(@product) %></li>
+  
+<% end %>
 </ul>

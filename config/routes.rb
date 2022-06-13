@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+  get 'users_delete/:id', to: 'users#delete', as: "delete_users"
+  resources :posts
 
   resources :products
   get 'products_delete/:id', to: 'products#delete', as: "delete_products"

@@ -37,6 +37,7 @@
     <p> <%= image_tag product.image,:size => "100x100" %> </p>
   <% end %>
      <%= link_to "Edit", edit_product_path(product) %>
+     <td> <%= button_to "show", product,:method => :get%></td>
      <%= button_to "Delete", delete_products_path(product),method: :get%>
      <%= button_to "Add #{product.product_type} to cart", line_items_path(:product_id => product.id) %>
    </p>

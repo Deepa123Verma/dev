@@ -1,4 +1,21 @@
-<% @users.each do |user| %>
-  <%= user.email %><br/>
-  <%#= image_tag user %>
-<% end %>
+<h5>All users </h5>
+<table>
+    <tr>
+      <td>email&nbsp;&nbsp;&nbsp;</td>
+      <td>Image&nbsp;&nbsp;&nbsp;</td>
+
+    </tr>
+  <tr>
+     <% @users.each do |user|%> 
+          <td><%= user.email%></td>
+          <td>
+          <% if user.image.present? %>
+            <p> <%= image_tag user.image,:size => "100x100" %> </p>
+          <% end %>
+          <td> <%= button_to "show", user,:method => :get%></td>
+          <td><%= button_to "Delete", delete_users_path(user),method: :get%></td>
+          
+        </td> 
+  </tr>
+     <% end %>
+</table>
